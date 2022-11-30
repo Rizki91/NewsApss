@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="handler"
+            type="com.test.gli.newsapss.utilitas.BottomDialogError" />
+        <variable
+            name="errCode"
+            type="String" />
+        <variable
+            name="errMessage"
+            type="String" />
+        <variable
+            name="bodyResponse"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textSize="@dimen/font_xLarge"
+            android:text="@string/title_under_maintenance"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btnClose"
+            android:onClick="@{handler::closeDialog}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+/>
+
+        <ImageView
+            android:id="@+id/image"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            android:layout_marginTop="20dp"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            />
+
+        <LinearLayout
+            android:id="@+id/errorMessage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintEnd_toStartOf="@+id/image"
+            android:layout_marginEnd="14dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/error_code_under_maintenance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                tools:text="500"
+                android:text="@{errCode}"
+                android:textStyle="bold"
+                android:textSize="@dimen/font_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:text="@string/error_msg_under_maintenance"
+                android:layout_marginTop="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                tools:text="Internal Server Error"
+                android:text="@{errMessage}"
+                android:textStyle="bold"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/font_medium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@+id/errorMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:text="@string/body_under_maintenance"
+                android:textStyle="italic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/textBodyResponse"
+                android:text="@{bodyResponse}"
+                tools:text="Hello world haha hahhe sdhfsh sfjsdhfjshf jsdhfjsdhfsdfh sdfhsdjf sdfhsdjhf sjfjsdhfjsdf sjfhsdjfhsdjf sjfhsdjfh isufisdfsk dfshdkfh"
+                android:layout_marginTop="10dp"
+                android:padding="12dp"
+
+                android:scrollbars="vertical"
+                android:textSize="@dimen/font_small"
+                android:textColor="@android:color/darker_gray"
+                android:layout_width="match_parent"
+                android:layout_height="185dp"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

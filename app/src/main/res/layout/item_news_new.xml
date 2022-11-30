@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="data"
+            type="com.test.gli.newsapss.model.ResponseNewNews" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="3dp"
+        android:layout_margin="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                app:bannerPhoto="@{data.urlToImage}"
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/image_not_available"/>
+
+            <TextView
+                android:textColor="@color/purple_500"
+                android:textStyle="bold"
+                android:text="@{data.title}"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/font_medium"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Title News"/>
+
+            <TextView
+                android:textColor="@color/black"
+                android:text="@{data.description}"
+                android:lines="3"
+                android:ellipsize="end"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Lorem ipsum dolor haha hehhe test aja bro but lihat isi tulisannya"/>
+
+            <TextView
+                android:textColor="@color/graye"
+                app:showDD="@{data.publishedAt}"
+                android:gravity="right"
+                android:ellipsize="end"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="2022-10-02"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

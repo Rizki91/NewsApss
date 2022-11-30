@@ -1,0 +1,17 @@
+<resources>
+<!--    <string name="app_name">NewsApss</string>-->
+    <string name="key">bda2a4dadbcf4ff69c092c1b500a0861</string>
+
+    <string name="title_under_maintenance">Mohon maaf,sedang perbaikan</string>
+    <string name="error_code_under_maintenance">Kode error</string>
+    <string name="error_msg_under_maintenance">Pesan error</string>
+    <string name="body_under_maintenance">Isi body:</string>
+    <string name="loading">Mohon tunggu…</string>
+
+    <string name="dialog_message_title">Pesan</string>
+    <string name="dialog_message_desc">Terdapat error dari respon layanan</string>
+    <string name="dialog_message_ok">OK</string>
+    <string name="dialog_message_yes">Ya</string>
+    <string name="dialog_message_no">Tidak</string>
+    <string name="search">Cari</string>
+</resources>
